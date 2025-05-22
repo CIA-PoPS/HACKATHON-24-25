@@ -1,0 +1,42 @@
+#infobar {
+    background-color: rgb(var(--color-background-four));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+    width: 100%;
+    color: rgb(var(--infobar-color-base));
+
+    & a:hover {
+        color: rgb(var(--infobar-color-hover));
+    }
+}
+
+.footer-section {
+    text-align: center;
+    width: 25%;
+    min-width: 200px;
+
+    & > h3 {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    & > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        list-style-type: none;
+    }
+}
+
+.footer-line {
+    display: inline;
+
+    & * {
+        display: inline;
+    }
+}

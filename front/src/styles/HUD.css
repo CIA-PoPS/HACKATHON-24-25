@@ -1,0 +1,30 @@
+#hud {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    z-index: 999;
+    color: rgb(var(--hud-color));
+}
+
+.hud-button {
+    background-color: rgb(var(--color-background-four));
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 24px;
+    font-weight: bold;
+
+    &:hover {
+        background-color: rgb(var(--color-background-two));
+        transform: scale(1.1);
+    }
+}

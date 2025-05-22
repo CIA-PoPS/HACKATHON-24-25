@@ -1,0 +1,44 @@
+.scoreboard-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(var(--color-background-four));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.scoreboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(var(--color-text-two));
+}
+
+.no-scores {
+    color: rgb(var(--color-text-two));
+    font-style: italic;
+}
+
+.scoreboard-table {
+    color: rgb(var(--color-text-two));
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scoreboard-table th, .scoreboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: rgb(var(--color-text-two));
+}
+
+.scoreboard-table th {
+    background-color: rgb(var(--color-background-three));
+    font-weight: bold;
+    color: rgb(var(--color-text-two));
+}
+
+.scoreboard-table tr:nth-child(even) {
+    background-color: rgb(var(--color-background-one));
+    color: rgb(var(--color-text-two));
+}

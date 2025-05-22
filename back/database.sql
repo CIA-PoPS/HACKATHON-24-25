@@ -1,0 +1,30 @@
+CREATE TABLE `users` (
+    `userId` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    `userEmail` VARCHAR(255) UNIQUE NOT NULL,
+    `userNickname` VARCHAR(255) UNIQUE NOT NULL,
+    `userPassword` VARCHAR(64) NOT NULL,
+    `userRegistrationTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `userIsAdmin` BOOLEAN DEFAULT FALSE,
+    `userIsVerified` BOOLEAN DEFAULT FALSE,
+    `userIsATeam` BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE `submits` (
+    `teamId` BIGINT UNSIGNED,
+    `submitTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `submitStatus` VARCHAR(16) NOT NULL,
+    `submitScore` BIGINT UNSIGNED DEFAULT 0,
+    `submitCanHaveError` BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (`teamId`) REFERENCES `users`(`userId`)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+CREATE TABLE `scores` (
+    `teamId` BIGINT UNSIGNED,
+    `stageId` BIGINT UNSIGNED,
+    `score` BIGINT UNSIGNED,
+    FOREIGN KEY (`teamId`) REFERENCES `users`(`userId`)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+);

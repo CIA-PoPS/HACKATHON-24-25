@@ -1,0 +1,141 @@
+#subroot {
+    --navbar-height: 70px;
+
+    --color-base: 255, 255, 255;
+    --color-reverse: 0, 0, 0;
+
+    --color-background-one: 102, 102, 102;
+    --color-background-two: 85, 85, 85;
+    --color-background-three: 68, 68, 68;
+    --color-background-four: 51, 51, 51;
+
+    --color-text-base: 0, 0, 0;
+    --color-text-reverse: 255, 255, 255;
+    --color-text-one: 102, 102, 102;
+    --color-text-two: 255, 255, 255;
+
+    --markdown-background: 245, 245, 245;
+    --element-selected: 0, 255, 255;
+
+    --hud-color: 255, 255, 255;
+
+    --infobar-color-base: 255, 255, 255;
+    --infobar-color-hover: 177, 177, 177;
+
+    --connect-input-color-background: 15, 193, 220;
+}
+
+#mode-theme:checked ~ #subroot {
+    --color-base: 0, 0, 0;
+    --color-reverse: 255, 255, 255;
+
+    --color-background-one: 51, 51, 51;
+    --color-background-two: 42, 42, 42;
+    --color-background-three: 34, 34, 34;
+    --color-background-four: 25, 25, 25;
+
+    --color-text-base: 200, 200, 200;
+    --color-text-reverse: 10, 10, 10;
+    --color-text-one: 51, 51, 51;
+    --color-text-two: 127, 127, 127;
+
+    --markdown-background: 122, 122, 122;
+    --element-selected: 0, 127, 127;
+
+    --hud-color: 127, 127, 127;
+
+    --infobar-color-base: 127, 127, 127;
+    --infobar-color-hover: 88, 88, 88;
+
+    --connect-input-color-background: 7, 97, 110;
+}
+
+* {
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    color: inherit;
+    font-family: inherit;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    text-align: left;
+    opacity: 1;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    overflow: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+head, input {
+    display: none;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    min-width: 400px;
+}
+
+#fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://bde-pops.github.io/VPS-DATA/cia/images/logo/cia_marge_back.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 70px;
+    background-size: auto calc(100% - 70px);
+    background-color: rgb(var(--color-base));
+    z-index: -1;
+}
+
+#main {
+    width: 95%;
+    min-height: calc(100vh - 2*20px - var(--navbar-height) - var(--infobar-height));
+    margin: 20px 2.5%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: rgb(var(--color-text-base));
+}
+
+hr {
+    width: 95%;
+    height: 3px;
+    margin: 20px auto;
+    background-color: rgb(var(--color-text-base));
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideBottom {
+    0% { transform: translateY(250px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes revealBottom {
+    0% { height: 0; }
+    100% { height: 100%; }
+}
